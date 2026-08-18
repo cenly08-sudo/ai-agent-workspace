@@ -189,3 +189,24 @@ uploadFile
 videoFile
 
 /uploader/bilibili_uploader/qrcode.png
+
+# Runtime output and local automation artifacts
+logs/
+*.log
+verify_code.txt
+uploadFile/
+videoFile/
+media/uploads/
+scripts/__pycache__/
+
+# Local database and browser state
+*.db
+*.sqlite
+*.sqlite3
+cookiesFile/
+storage-state*.json
+*.har
+
+# Local editor and OS files
+Thumbs.db
+.vscode/
