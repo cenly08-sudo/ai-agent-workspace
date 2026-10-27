@@ -1,4 +1,4 @@
-﻿"""Legacy direct-uploader example for Kuaishou.
+"""Legacy direct-uploader example for Kuaishou.
 
 Current mainline usage prefers:
     sau kuaishou login --account creator
@@ -20,13 +20,13 @@ from uploader.ks_uploader.main import (
 
 
 def upload_video_to_kuaishou():
-    account_file = Path(BASE_DIR, "cookies", "kuaishou_creator.json")
+    account_file = Path(BASE_DIR / "cookies" / "kuaishou_creator.json")
     account_file.parent.mkdir(exist_ok=True)
 
     video_file_path = Path(BASE_DIR) / "videos/demo.mp4"
     thumbnail_path = video_file_path.with_suffix(".png")
-    video_meta_title = "蹇墜瑙嗛涓婁紶绀轰緥"
-    video_meta_hashtags = ["蹇墜", "鑷姩涓婁紶", "绀轰緥"]
+    video_meta_title = "快手视频上传示例"
+    video_meta_hashtags = ["快手", "自动上传", "示例"]
     video_meta_publish_time = datetime.strptime("2026-03-27 12:13", "%Y-%m-%d %H:%M")
     publish_strategy = KUAISHOU_PUBLISH_STRATEGY_SCHEDULED
 
@@ -43,7 +43,7 @@ def upload_video_to_kuaishou():
 
 
 def upload_note_to_kuaishou():
-    account_file = Path(BASE_DIR, "cookies", "kuaishou_creator.json")
+    account_file = Path(BASE_DIR / "cookies" / "kuaishou_creator.json")
     account_file.parent.mkdir(exist_ok=True)
 
     image_paths = [
@@ -51,8 +51,8 @@ def upload_note_to_kuaishou():
         Path(BASE_DIR) / "videos/demo1.png",
         Path(BASE_DIR) / "videos/demo2.png",
     ]
-    note = "蹇墜鍥炬枃鍐呭绀轰緥"
-    tags = ["蹇墜鍥炬枃", "鑷姩涓婁紶", "绀轰緥"]
+    note = "快手图文内容示例"
+    tags = ["快手图文", "自动上传", "示例"]
     note_meta_publish_time = datetime.strptime("2026-03-27 12:13", "%Y-%m-%d %H:%M")
     publish_strategy = KUAISHOU_PUBLISH_STRATEGY_SCHEDULED
 
@@ -70,4 +70,3 @@ def upload_note_to_kuaishou():
 if __name__ == '__main__':
     upload_video_to_kuaishou()
     # upload_note_to_kuaishou()
-
